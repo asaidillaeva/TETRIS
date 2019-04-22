@@ -1,8 +1,10 @@
 # TETRIS
 This project is for course CS102.
+
 Author:Aliia Saidillaeva
 
-Tetris (derived from "tetramino" and "tennis") - developed by the inventor and developer of the USSR programmer Alexey Pajitnov on June 6, 1984. 
+Tetris (derived from "tetramino" and "tennis") - developed by the inventor and developer of the USSR programmer Alexey Pajitnov
+on June 6, 1984. 
 In this game we use tetramino figures as:
  I: four blocks in a straight line.
  O: four blocks in a 2×2 square. 
