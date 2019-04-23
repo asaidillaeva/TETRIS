@@ -27,16 +27,25 @@ The S, Z and J, L figures are reflection of the each other.
 How to play this game?
 
 Button_RIGHT => move right
+
 Button_Left => move left
+
 Button_Down => move down faster
+
 Button_Up => rotate piece
 
 After every +500 score the speed increases.
+
 move_down_faster => score +1
+
 1 filled row => score +100
+
 2 filled row => score +300
+
 3 filled row => score +500
+
 4 filled row => score +800
+
 Your goal is to fill a row with blocks of figures using the top buttons and collect the most points.
 
 
