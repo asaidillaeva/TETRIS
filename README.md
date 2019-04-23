@@ -6,13 +6,21 @@ Author:Aliia Saidillaeva
 Tetris (derived from "tetramino" and "tennis") - developed by the inventor and developer of the USSR programmer Alexey Pajitnov
 on June 6, 1984. 
 In this game we use tetramino figures as:
+ 
  I: four blocks in a straight line.
+ 
  O: four blocks in a 2×2 square. 
+ 
  T: a row of three blocks with one added below the center.
+ 
  J: a row of three blocks with one added below the right side. 
+ 
  L: a row of three blocks with one added below the left side.
+ 
  S: two stacked horizontal dominoes with the top one offset to the right. 
+ 
  Z: two stacked horizontal dominoes with the top one offset to the left.
+
 The S, Z and J, L figures are reflection of the each other.
 
 
