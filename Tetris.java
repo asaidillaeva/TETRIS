@@ -277,11 +277,61 @@ public class Tetris extends JPanel {
 
         // Make the falling piece drop every second
         new Thread() {
-            @Override public void run() {
+            @Override
+            public void run() {
                 while (true) {
                     try {
-                        Thread.sleep(1000);
-                        game.dropDown();
+                        if(game.score>=0 && game.score<=500) {
+                            Thread.sleep(1000);
+                            game.dropDown();
+                        }
+                        else if(game.score>=501 && game.score<=1000){
+                            Thread.sleep(900);
+                            game.dropDown();
+                        }
+                        else if(game.score>=1001 && game.score<=1500) {
+                            Thread.sleep(800);
+                            game.dropDown();
+                        }
+                        else if(game.score>=1501 && game.score<=2000){
+                            Thread.sleep(700);
+                            game.dropDown();
+                        }
+                        else if(game.score>=2001 && game.score<=2500){
+                            Thread.sleep(600);
+                            game.dropDown();
+                        }
+                        else if(game.score>=2501 && game.score<=3000){
+                            Thread.sleep(550);
+                            game.dropDown();
+                        }else if(game.score>=3001 && game.score<=3500){
+                            Thread.sleep(500);
+                            game.dropDown();
+                        }else if(game.score>=3501 && game.score<=4000){
+                            Thread.sleep(400);
+                            game.dropDown();
+                        }
+                        else if(game.score>=4001 && game.score<=4500){
+                            Thread.sleep(350);
+                            game.dropDown();
+                        }
+                        else if (game.score>=4501 && game.score<=5000){
+                            Thread.sleep(300);
+                            game.dropDown();
+                        }else if(game.score>=5001 && game.score<=5500){
+                            Thread.sleep(250);
+                            game.dropDown();
+                        }
+                        else if(game.score>=5501 && game.score<=6000){
+                            Thread.sleep(200);
+                            game.dropDown();
+                        }else if(game.score>=6001 && game.score<=6500){
+                            Thread.sleep(150);
+                            game.dropDown();
+                        }else{
+                            Thread.sleep(100);
+                            game.dropDown();
+                        }
                     } catch ( InterruptedException e ) {}
                 }
             }
