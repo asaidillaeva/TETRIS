@@ -1,3 +1,5 @@
+package Main;
+
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Point;
@@ -8,6 +10,8 @@ import java.util.Collections;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+
+import static Main.PlayMusic.playMusic;
 
 public class Tetris extends JPanel {
 
@@ -237,7 +241,7 @@ public class Tetris extends JPanel {
     }
 
     public static void main(String[] args) {
-        JFrame f = new JFrame("Tetris");
+        JFrame f = new JFrame("TETRIS");
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.setSize(12*26+10, 26*23+25);
         f.setVisible(true);
@@ -254,18 +258,33 @@ public class Tetris extends JPanel {
             public void keyPressed(KeyEvent e) {
                 switch (e.getKeyCode()) {
                     case KeyEvent.VK_UP:
+                        new Thread(() -> {
+                            playMusic("wav/rotate.wav", false);
+                        }).start();
                         game.rotate(-1);
                         break;
                     case KeyEvent.VK_DOWN:
+                        new Thread(() -> {
+                            playMusic("wav/rotate.wav", false);
+                        }).start();
                         game.rotate(+1);
                         break;
                     case KeyEvent.VK_LEFT:
+                        new Thread(() -> {
+                            playMusic("wav/rotate.wav", false);
+                        }).start();
                         game.move(-1);
                         break;
                     case KeyEvent.VK_RIGHT:
+                        new Thread(() -> {
+                            playMusic("wav/rotate.wav", false);
+                        }).start();
                         game.move(+1);
                         break;
                     case KeyEvent.VK_SPACE:
+                        new Thread(() -> {
+                            playMusic("wav/drop.wav", false);
+                        }).start();
                         game.dropDown();
                         game.score += 1;
                         break;

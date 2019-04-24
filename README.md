@@ -3,11 +3,11 @@ This project is for course CS102.
 
 Author:Aliia Saidillaeva
 
-Tetris (derived from "tetramino" and "tennis") - developed by the inventor and 
+Main.Tetris (derived from "tetramino" and "tennis") - developed by the inventor and 
 developer of the USSR programmer Alexey Pajitnov on June 6, 1984. 
 In this game we use tetramino figures as:
 
-Tetris (derived from "tetramino" and "tennis") - developed by the inventor and developer of the USSR programmer Alexey Pajitnov
+Main.Tetris (derived from "tetramino" and "tennis") - developed by the inventor and developer of the USSR programmer Alexey Pajitnov
 on June 6, 1984. 
 In this game we use tetramino figures as:
  
@@ -55,11 +55,11 @@ Your goal is to fill a row with blocks of figures using the top buttons and coll
 
 The benefits of playing TETRIS
 
-According to the study Mind research network, regular Tetris game allows you to 
+According to the study Mind research network, regular Main.Tetris game allows you to 
 improve your planning skills, develop critical thinking, quick mental response. 
-Moreover, Tetris can increase brain size. "Tetris" for the brain is very complicated. 
+Moreover, Main.Tetris can increase brain size. "Main.Tetris" for the brain is very complicated. 
 A combination of many brain processes is required: attention, visual and motor coordination,
-memory. All this should work together very quickly. Not surprisingly, Tetris develops 
+memory. All this should work together very quickly. Not surprisingly, Main.Tetris develops 
 several areas of the brain. Besides, every time when it is possible to lower the figure and 
 achieve the disappearance of the level, the person feels satisfied with the solution of the 
 problem. Since the process is cyclical, it is rather difficult to break away from the game. 
