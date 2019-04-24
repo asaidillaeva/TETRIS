@@ -3,14 +3,17 @@ This project is for course CS102.
 
 Author:Aliia Saidillaeva
 
+<<<<<<< HEAD
 Tetris (derived from "tetramino" and "tennis") - developed by the inventor and 
 developer of the USSR programmer Alexey Pajitnov on June 6, 1984. 
 In this game we use tetramino figures as:
 
+=======
 Tetris (derived from "tetramino" and "tennis") - developed by the inventor and developer of the USSR programmer Alexey Pajitnov
 on June 6, 1984. 
 In this game we use tetramino figures as:
  
+>>>>>>> origin/master
  I: four blocks in a straight line.
  
  O: four blocks in a 2×2 square. 
@@ -50,7 +53,12 @@ move_down_faster => score +1
 
 4 filled row => score +800
 
+<<<<<<< HEAD
+
+
+=======
 Your goal is to fill a row with blocks of figures using the top buttons and collect the most points.
+>>>>>>> origin/master
 
 
 The benefits of playing TETRIS
