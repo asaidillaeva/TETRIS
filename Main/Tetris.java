@@ -1,15 +1,12 @@
 package Main;
-
-import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.Point;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.ArrayList;
 import java.util.Collections;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import java.util.Map;
+import java.lang.NullPointerException;
 
 import static Main.PlayMusic.playMusic;
 
@@ -83,6 +80,7 @@ public class Tetris extends JPanel {
     private int currentPiece;
     private int rotation;
     private ArrayList<Integer> nextPieces = new ArrayList<Integer>();
+    private Map<Integer, Boolean> playMusicTracker;
 
     private long score;
     private Color[][] well;
@@ -103,7 +101,7 @@ public class Tetris extends JPanel {
     }
 
     // Put a new, random piece into the dropping position
-    public void newPiece() {
+    private void newPiece() {
         pieceOrigin = new Point(5, 2);
         rotation = 0;
         if (nextPieces.isEmpty()) {
@@ -145,7 +143,7 @@ public class Tetris extends JPanel {
     }
 
     // Drops the piece one line or fixes it to the well if it can't drop
-    public void dropDown() {
+    private void dropDown() {
         if (!collidesAt(pieceOrigin.x, pieceOrigin.y + 1, rotation)) {
             pieceOrigin.y += 1;
         } else {
@@ -156,7 +154,7 @@ public class Tetris extends JPanel {
 
     // Make the dropping piece part of the well, so it is available for
     // collision detection.
-    public void fixToWell() {
+    private void fixToWell() {
         for (Point p : Tetraminos[currentPiece][rotation]) {
             well[pieceOrigin.x + p.x][pieceOrigin.y + p.y] = tetraminoColors[currentPiece];
         }
@@ -164,7 +162,7 @@ public class Tetris extends JPanel {
         newPiece();
     }
 
-    public void deleteRow(int row) {
+    private void deleteRow(int row) {
         for (int j = row-1; j > 0; j--) {
             for (int i = 1; i < 11; i++) {
                 well[i][j+1] = well[i][j];
@@ -175,7 +173,7 @@ public class Tetris extends JPanel {
 
     // Clear completed rows from the field and award score according to
     // the number of simultaneously cleared rows.
-    public void clearRows() {
+    private void clearRows() {
         boolean gap;
         int numClears = 0;
 
@@ -258,33 +256,23 @@ public class Tetris extends JPanel {
             public void keyPressed(KeyEvent e) {
                 switch (e.getKeyCode()) {
                     case KeyEvent.VK_UP:
-                        new Thread(() -> {
-                            playMusic("wav/rotate.wav", false);
-                        }).start();
+                        playMusic("wav/rotate.wav", false);
                         game.rotate(-1);
                         break;
                     case KeyEvent.VK_DOWN:
-                        new Thread(() -> {
-                            playMusic("wav/rotate.wav", false);
-                        }).start();
+                        playMusic("wav/rotate.wav", false);
                         game.rotate(+1);
                         break;
                     case KeyEvent.VK_LEFT:
-                        new Thread(() -> {
-                            playMusic("wav/rotate.wav", false);
-                        }).start();
+                        playMusic("wav/rotate.wav", false);
                         game.move(-1);
                         break;
                     case KeyEvent.VK_RIGHT:
-                        new Thread(() -> {
-                            playMusic("wav/rotate.wav", false);
-                        }).start();
+                        playMusic("wav/rotate.wav", false);
                         game.move(+1);
                         break;
                     case KeyEvent.VK_SPACE:
-                        new Thread(() -> {
-                            playMusic("wav/drop.wav", false);
-                        }).start();
+                        playMusic("wav/drop.wav", false);
                         game.dropDown();
                         game.score += 1;
                         break;
@@ -301,58 +289,83 @@ public class Tetris extends JPanel {
             public void run() {
                 while (true) {
                     try {
-                        if(game.score>=0 && game.score<=500) {
+                        if (game.score >= 0 && game.score <= 500) {
+                            playMusic("wav/holy_alphabet.wav", false);
                             Thread.sleep(1000);
                             game.dropDown();
-                        }
-                        else if(game.score>=501 && game.score<=1000){
+                            game.playMusicTracker.put(500, true);
+
+                        } else if (game.score >= 501 && game.score <= 1000) {
+                            playMusic("wav/holy_alphabet.wav", false);
                             Thread.sleep(900);
                             game.dropDown();
-                        }
-                        else if(game.score>=1001 && game.score<=1500) {
+                            game.playMusicTracker.put(1000, true);
+
+                        } else if (game.score >= 1001 && game.score <= 1500) {
+                            playMusic("wav/holy_caffeine.wav", false);
                             Thread.sleep(800);
                             game.dropDown();
-                        }
-                        else if(game.score>=1501 && game.score<=2000){
+                            game.playMusicTracker.put(1500, true);
+
+                        } else if (game.score >= 1501 && game.score <= 2000) {
+                            playMusic("wav/holy_caffeine.wav", false);
                             Thread.sleep(700);
                             game.dropDown();
-                        }
-                        else if(game.score>=2001 && game.score<=2500){
+                            game.playMusicTracker.put(2000, true);
+
+                        } else if (game.score >= 2001 && game.score <= 2500) {
+                            playMusic("wav/holy_fruit_salad.wav", false);
                             Thread.sleep(600);
                             game.dropDown();
-                        }
-                        else if(game.score>=2501 && game.score<=3000){
+                            game.playMusicTracker.put(2500, true);
+                        } else if (game.score >= 2501 && game.score <= 3000) {
+                            playMusic("wav/holy_fruit_salad.wav", false);
                             Thread.sleep(550);
                             game.dropDown();
-                        }else if(game.score>=3001 && game.score<=3500){
+                            game.playMusicTracker.put(3000, true);
+                        } else if (game.score >= 3001 && game.score <= 3500) {
+                            playMusic("wav/holy_heart_failure.wav", false);
                             Thread.sleep(500);
                             game.dropDown();
-                        }else if(game.score>=3501 && game.score<=4000){
+                            game.playMusicTracker.put(3500, true);
+                        } else if (game.score >= 3501 && game.score <= 4000) {
+                            playMusic("wav/holy_heart_failure.wav", false);
                             Thread.sleep(400);
                             game.dropDown();
-                        }
-                        else if(game.score>=4001 && game.score<=4500){
+                            game.playMusicTracker.put(4000, true);
+                        } else if (game.score >= 4001 && game.score <= 4500) {
+                            playMusic("wav/holy_mashed_potatoes.wav", false);
                             Thread.sleep(350);
                             game.dropDown();
-                        }
-                        else if (game.score>=4501 && game.score<=5000){
+                            game.playMusicTracker.put(4500, true);
+                        } else if (game.score >= 4501 && game.score <= 5000) {
+                            playMusic("wav/holy_mashed_potatoes.wav", false);
+                            game.playMusicTracker.put(5000, true);
                             Thread.sleep(300);
                             game.dropDown();
-                        }else if(game.score>=5001 && game.score<=5500){
+                        } else if (game.score >= 5001 && game.score <= 5500) {
+                            playMusic("wav/holy_nightmare.wav", false);
+                            game.playMusicTracker.put(5500, true);
                             Thread.sleep(250);
                             game.dropDown();
-                        }
-                        else if(game.score>=5501 && game.score<=6000){
+                        } else if (game.score >= 5501 && game.score <= 6000) {
+                            playMusic("wav/holy_nightmare.wav", false);
+                            game.playMusicTracker.put(6000, true);
                             Thread.sleep(200);
                             game.dropDown();
-                        }else if(game.score>=6001 && game.score<=6500){
+                        } else if (game.score >= 6001 && game.score <= 6500) {
+                            playMusic("wav/bitchin.wav", false);
+                            game.playMusicTracker.put(6500, true);
                             Thread.sleep(150);
                             game.dropDown();
-                        }else{
+                        } else {
+                            playMusic("wav/bitchin.wav", false);
+                            game.playMusicTracker.put(7000, true);
                             Thread.sleep(100);
                             game.dropDown();
                         }
-                    } catch ( InterruptedException e ) {}
+                    } catch (InterruptedException | NullPointerException ignored) {
+                    }
                 }
             }
         }.start();
