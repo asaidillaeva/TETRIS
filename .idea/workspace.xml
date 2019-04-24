@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3d2fbac2-d220-46aa-b3e0-2d78624a950e" name="Default Changelist" comment="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;README.md" />
+    <list default="true" id="3d2fbac2-d220-46aa-b3e0-2d78624a950e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/music/PlayMusic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/wav/bgMusic.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/wav/bitchin.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/wav/blockClear.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/wav/drop.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/wav/game_over.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/wav/holy_alphabet.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/wav/holy_caffeine.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/wav/holy_fruit_salad.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/wav/holy_heart_failure.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/wav/holy_mashed_potatoes.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/wav/holy_nightmare.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/wav/levelup.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/wav/rotate.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/wav/tap.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tetris.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tetris.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,13 +32,32 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Tetris.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4450">
-              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="-1353">
+              <caret line="227" column="13" lean-forward="true" selection-start-line="227" selection-start-column="13" selection-end-line="227" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/music/PlayMusic.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -29,6 +66,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/Tetris.java" />
+        <option value="$PROJECT_DIR$/music/PlayMusic.java" />
       </list>
     </option>
   </component>
@@ -36,15 +75,13 @@
     <option name="x" value="924" />
     <option name="y" value="-5" />
     <option name="width" value="995" />
-    <option name="height" value="1070" />
+    <option name="height" value="1085" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -52,24 +89,26 @@
               <item name="TETRIS" type="b2602c69:ProjectViewProjectNode" />
               <item name="TETRIS" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="TETRIS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TETRIS" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556097329968" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556099801452" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -95,17 +134,27 @@
       <updated>1556096806818</updated>
       <workItem from="1556096808136" duration="526000" />
       <workItem from="1556097770264" duration="771000" />
+      <workItem from="1556098593234" duration="212000" />
+      <workItem from="1556099519793" duration="541000" />
     </task>
+    <task id="LOCAL-00001" summary="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;README.md">
+      <created>1556098654386</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1556098654386</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1297000" />
+    <option name="totallyTimeSpent" value="2050000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="84" y="-5" width="1836" height="1085" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2539326" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26179776" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -153,10 +202,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/wav/tap.wav">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/music/PlayMusic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Tetris.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4450">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        <state relative-caret-position="-1353">
+          <caret line="227" column="13" lean-forward="true" selection-start-line="227" selection-start-column="13" selection-end-line="227" selection-end-column="13" />
         </state>
       </provider>
     </entry>

@@ -168,6 +168,7 @@ public class Tetris extends JPanel {
         }
     }
 
+
     // Clear completed rows from the field and award score according to
     // the number of simultaneously cleared rows.
     public void clearRows() {
