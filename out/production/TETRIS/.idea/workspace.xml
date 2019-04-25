@@ -3,6 +3,23 @@
   <component name="ChangeListManager">
     <list default="true" id="3d2fbac2-d220-46aa-b3e0-2d78624a950e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/Tetris.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/Tetris.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TETRIS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TETRIS/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TETRIS/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TETRIS/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/wav/bgMusic.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Main/wav/bgMusic.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/wav/bitchin.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Main/wav/bitchin.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/wav/blockClear.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Main/wav/blockClear.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/wav/drop.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Main/wav/drop.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/wav/game_over.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Main/wav/game_over.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/wav/holy_alphabet.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Main/wav/holy_alphabet.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/wav/holy_caffeine.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Main/wav/holy_caffeine.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/wav/holy_fruit_salad.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Main/wav/holy_fruit_salad.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/wav/holy_heart_failure.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Main/wav/holy_heart_failure.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/wav/holy_mashed_potatoes.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Main/wav/holy_mashed_potatoes.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/wav/holy_nightmare.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Main/wav/holy_nightmare.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/wav/levelup.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Main/wav/levelup.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/wav/rotate.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Main/wav/rotate.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/wav/tap.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Main/wav/tap.wav" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,13 +33,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Main/Tetris.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="351" column="41" selection-start-line="351" selection-start-column="41" selection-end-line="351" selection-end-column="41" />
+            <state relative-caret-position="298">
+              <caret line="361" column="58" lean-forward="true" selection-start-line="361" selection-start-column="58" selection-end-line="361" selection-end-column="58" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3708#3717#0" expanded="true" />
-                <element signature="e#9679#14485#0" expanded="true" />
-                <element signature="e#14484#14485#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -31,8 +45,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Main/PlayMusic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+            <state relative-caret-position="190">
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -86,7 +100,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -109,6 +122,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -171,6 +185,7 @@
       <workItem from="1556098593234" duration="212000" />
       <workItem from="1556099519793" duration="1934000" />
       <workItem from="1556124658714" duration="5674000" />
+      <workItem from="1556181529570" duration="2832000" />
     </task>
     <task id="LOCAL-00001" summary="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;README.md">
       <created>1556098654386</created>
@@ -200,27 +215,32 @@
       <option name="project" value="LOCAL" />
       <updated>1556131095619</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Adding music.">
+      <created>1556182523666</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1556182523666</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9117000" />
+    <option name="totallyTimeSpent" value="11949000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="924" y="30" width="995" height="1050" extended-state="0" />
-    <editor active="true" />
+    <frame x="84" y="-5" width="1836" height="1085" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.5037274" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18539326" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Inspection Results" weight="0.32924107" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32975295" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32924107" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32867885" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -231,6 +251,7 @@
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32924107" />
+      <window_info anchor="bottom" id="Inspection Results" order="13" weight="0.32924107" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -289,16 +310,6 @@
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Main/PlayMusic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/flow/bom.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -306,15 +317,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Main/Tetris.java">
+    <entry file="file://$PROJECT_DIR$/Main/PlayMusic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="351" column="41" selection-start-line="351" selection-start-column="41" selection-end-line="351" selection-end-column="41" />
+        <state relative-caret-position="190">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3708#3717#0" expanded="true" />
-            <element signature="e#9679#14485#0" expanded="true" />
-            <element signature="e#14484#14485#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/wav/bgMusic.wav">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2185">
+          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main/Tetris.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="361" column="58" lean-forward="true" selection-start-line="361" selection-start-column="58" selection-end-line="361" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

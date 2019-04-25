@@ -1,7 +1,7 @@
 # TETRIS
 This project is for course CS102.
 
-Author:Aliia Saidillaeva
+Author:Aliia Saidillaeva(I take code(only code) from github)
 
 Main.Tetris (derived from "tetramino" and "tennis") - developed by the inventor and 
 developer of the USSR programmer Alexey Pajitnov on June 6, 1984. 
