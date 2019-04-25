@@ -4,9 +4,7 @@
     <list default="true" id="3d2fbac2-d220-46aa-b3e0-2d78624a950e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main/Tetris.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/Tetris.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TETRIS/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TETRIS/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TETRIS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TETRIS/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TETRIS/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TETRIS/README.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,13 +18,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Main/Tetris.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="351" column="41" selection-start-line="351" selection-start-column="41" selection-end-line="351" selection-end-column="41" />
+            <state relative-caret-position="1630">
+              <caret line="364" column="66" selection-start-line="364" selection-start-column="66" selection-end-line="364" selection-end-column="66" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3708#3717#0" expanded="true" />
-                <element signature="e#9679#14485#0" expanded="true" />
-                <element signature="e#14484#14485#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -35,8 +30,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Main/PlayMusic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+            <state relative-caret-position="190">
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -79,7 +74,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="924" />
     <option name="y" value="30" />
     <option name="width" value="995" />
@@ -118,7 +113,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556131086906" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556131280039" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
@@ -174,7 +169,8 @@
       <workItem from="1556097770264" duration="771000" />
       <workItem from="1556098593234" duration="212000" />
       <workItem from="1556099519793" duration="1934000" />
-      <workItem from="1556124658714" duration="5477000" />
+      <workItem from="1556124658714" duration="5674000" />
+      <workItem from="1556181529570" duration="915000" />
     </task>
     <task id="LOCAL-00001" summary="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;README.md">
       <created>1556098654386</created>
@@ -197,14 +193,21 @@
       <option name="project" value="LOCAL" />
       <updated>1556100762897</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Adding music.">
+      <created>1556131095619</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1556131095619</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8920000" />
+    <option name="totallyTimeSpent" value="10032000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="924" y="30" width="995" height="1050" extended-state="0" />
+    <frame x="84" y="-5" width="1836" height="1085" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.5037274" />
@@ -214,10 +217,9 @@
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Inspection Results" weight="0.32924107" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32975295" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32924107" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32867885" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -228,6 +230,7 @@
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32924107" />
+      <window_info anchor="bottom" id="Inspection Results" order="13" weight="0.32924107" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -286,16 +289,6 @@
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Main/PlayMusic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/flow/bom.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -305,13 +298,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Main/Tetris.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="351" column="41" selection-start-line="351" selection-start-column="41" selection-end-line="351" selection-end-column="41" />
+        <state relative-caret-position="1630">
+          <caret line="364" column="66" selection-start-line="364" selection-start-column="66" selection-end-line="364" selection-end-column="66" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3708#3717#0" expanded="true" />
-            <element signature="e#9679#14485#0" expanded="true" />
-            <element signature="e#14484#14485#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main/PlayMusic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

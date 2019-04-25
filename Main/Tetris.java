@@ -340,29 +340,29 @@ public class Tetris extends JPanel {
                             game.playMusicTracker.put(4500, true);
                         } else if (game.score >= 4501 && game.score <= 5000) {
                             playMusic("wav/holy_mashed_potatoes.wav", false);
-                            game.playMusicTracker.put(5000, true);
                             Thread.sleep(300);
                             game.dropDown();
+                            game.playMusicTracker.put(5000, true);
                         } else if (game.score >= 5001 && game.score <= 5500) {
                             playMusic("wav/holy_nightmare.wav", false);
-                            game.playMusicTracker.put(5500, true);
                             Thread.sleep(250);
                             game.dropDown();
+                            game.playMusicTracker.put(5500, true);
                         } else if (game.score >= 5501 && game.score <= 6000) {
                             playMusic("wav/holy_nightmare.wav", false);
-                            game.playMusicTracker.put(6000, true);
                             Thread.sleep(200);
                             game.dropDown();
+                            game.playMusicTracker.put(6000, true);
                         } else if (game.score >= 6001 && game.score <= 6500) {
                             playMusic("wav/bitchin.wav", false);
-                            game.playMusicTracker.put(6500, true);
                             Thread.sleep(150);
                             game.dropDown();
+                            game.playMusicTracker.put(6500, true);
                         } else {
                             playMusic("wav/bitchin.wav", false);
-                            game.playMusicTracker.put(7000, true);
                             Thread.sleep(100);
                             game.dropDown();
+                            game.playMusicTracker.put(7000, true);
                         }
                     } catch (InterruptedException | NullPointerException ignored) {
                     }
