@@ -1,32 +1,27 @@
 package Main;
 
-import java.io.File;
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
+import sun.audio.*;
 
-class PlayMusic {
-    static void playMusic(String filename, boolean repeat) {
-        try {
-            ClassLoader classLoader = PlayMusic.class.getClassLoader();
-            File soundFile = new File(classLoader.getResource(filename).getFile());
-            AudioInputStream inputStream = AudioSystem.getAudioInputStream(soundFile);
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 
-            Clip clip = AudioSystem.getClip();
-            clip.open(inputStream);
-            if (repeat) {
-                clip.loop(Clip.LOOP_CONTINUOUSLY);
+class PlayMusic{
+    static void playMusic(String filename){
+        AudioPlayer MAP = AudioPlayer.player;
+        AudioStream MAS;
+
+        ContinuousAudioDataStream loop = null;
+            try {
+                InputStream test = new FileInputStream(filename);
+                MAS = new AudioStream(test);
+                AudioPlayer.player.start(MAS);
+
+
+            } catch (IOException error) {
             }
-            clip.start();
+            MAP.start(loop);
 
-            while (!clip.isRunning())
-                Thread.sleep(10);
-            while (clip.isRunning())
-                Thread.sleep(10);
-
-            clip.close();
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
     }
+
 }

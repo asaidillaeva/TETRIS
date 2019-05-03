@@ -2,24 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d2fbac2-d220-46aa-b3e0-2d78624a950e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Main/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main/PlayMusic.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/PlayMusic.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main/Tetris.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main/Tetris.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TETRIS/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TETRIS/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TETRIS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TETRIS/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TETRIS/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TETRIS/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/wav/bgMusic.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Main/wav/bgMusic.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/wav/bitchin.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Main/wav/bitchin.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/wav/blockClear.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Main/wav/blockClear.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/wav/drop.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Main/wav/drop.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/wav/game_over.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Main/wav/game_over.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/wav/holy_alphabet.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Main/wav/holy_alphabet.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/wav/holy_caffeine.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Main/wav/holy_caffeine.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/wav/holy_fruit_salad.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Main/wav/holy_fruit_salad.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/wav/holy_heart_failure.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Main/wav/holy_heart_failure.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/wav/holy_mashed_potatoes.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Main/wav/holy_mashed_potatoes.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/wav/holy_nightmare.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Main/wav/holy_nightmare.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/wav/levelup.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Main/wav/levelup.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/wav/rotate.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Main/wav/rotate.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/wav/tap.wav" beforeDir="false" afterPath="$PROJECT_DIR$/Main/wav/tap.wav" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,11 +22,35 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Main/Tetris.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="361" column="58" lean-forward="true" selection-start-line="361" selection-start-column="58" selection-end-line="361" selection-end-column="58" />
+            <state relative-caret-position="572">
+              <caret line="289" lean-forward="true" selection-start-line="289" selection-end-line="289" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#9673#9674#0" expanded="true" />
+                <element signature="e#9590#9591#0" expanded="true" />
+                <element signature="e#9633#9634#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="722">
+                <caret line="38" column="14" lean-forward="true" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="14" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Main/Menu.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="57">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
         </entry>
@@ -45,8 +58,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Main/PlayMusic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="13" selection-start-line="13" selection-end-line="13" />
+            <state relative-caret-position="266">
+              <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -72,6 +85,9 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/music/PlayMusic.java" />
         <option value="$PROJECT_DIR$/Tetris.java" />
+        <option value="$PROJECT_DIR$/III.java" />
+        <option value="$PROJECT_DIR$/Main/Main.java" />
+        <option value="$PROJECT_DIR$/Main/Menu.java" />
         <option value="$PROJECT_DIR$/Main/PlayMusic.java" />
         <option value="$PROJECT_DIR$/Main/Tetris.java" />
       </list>
@@ -90,16 +106,18 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="924" />
+    <option name="x" value="927" />
     <option name="y" value="30" />
-    <option name="width" value="995" />
-    <option name="height" value="1050" />
+    <option name="width" value="993" />
+    <option name="height" value="979" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -110,30 +128,35 @@
             <path>
               <item name="TETRIS" type="b2602c69:ProjectViewProjectNode" />
               <item name="TETRIS" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
+              <item name="Main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TETRIS" type="b2602c69:ProjectViewProjectNode" />
               <item name="TETRIS" type="462c0819:PsiDirectoryNode" />
               <item name="Main" type="462c0819:PsiDirectoryNode" />
+              <item name="wav" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556184419853" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556879471583" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Main" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
@@ -150,7 +173,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Tetris">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main.Main" />
+      <module name="TETRIS" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Tetris" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main.Tetris" />
       <module name="TETRIS" />
@@ -167,6 +203,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Tetris" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -185,7 +222,16 @@
       <workItem from="1556098593234" duration="212000" />
       <workItem from="1556099519793" duration="1934000" />
       <workItem from="1556124658714" duration="5674000" />
-      <workItem from="1556181529570" duration="2832000" />
+      <workItem from="1556181529570" duration="4139000" />
+      <workItem from="1556371166116" duration="3850000" />
+      <workItem from="1556378388246" duration="652000" />
+      <workItem from="1556530330314" duration="4039000" />
+      <workItem from="1556776230168" duration="1339000" />
+      <workItem from="1556780595476" duration="348000" />
+      <workItem from="1556782687222" duration="5791000" />
+      <workItem from="1556788727540" duration="6584000" />
+      <workItem from="1556866347437" duration="7688000" />
+      <workItem from="1556879497143" duration="2805000" />
     </task>
     <task id="LOCAL-00001" summary="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;README.md">
       <created>1556098654386</created>
@@ -222,16 +268,24 @@
       <option name="project" value="LOCAL" />
       <updated>1556182523666</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="nothing.">
+      <created>1556184438901</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1556184438901</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11949000" />
+    <option name="totallyTimeSpent" value="46352000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="84" y="-5" width="1836" height="1085" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18539326" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14662921" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -240,13 +294,45 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32975295" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32867885" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.19226637" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32975295" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.32867885" />
+      <window_info anchor="bottom" id="Inspection Results" order="13" weight="0.32924107" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info anchor="right" id="Maven" order="5" weight="0.3290735" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Database" order="8" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18820225" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32975295" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32867885" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32975295" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
@@ -261,7 +347,7 @@
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Database" order="8" />
-    </layout>
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -269,23 +355,14 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;README.md" />
     <MESSAGE value="Adding music." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding music." />
+    <MESSAGE value="nothing." />
+    <option name="LAST_COMMIT_MESSAGE" value="nothing." />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="127">
-            <caret line="38" column="14" lean-forward="true" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="14" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/wav/tap.wav">
+    <entry file="file://$PROJECT_DIR$/Main/wav/tap.wav">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/wav/rotate.wav">
+    <entry file="file://$PROJECT_DIR$/Main/wav/rotate.wav">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/out/production/TETRIS/Main/Tetris.class">
@@ -307,9 +384,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/flow/bom.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -317,29 +391,99 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Main/PlayMusic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/wav/bgMusic.wav">
+    <entry file="file://$PROJECT_DIR$/Main/wav/bgMusic.wav">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2185">
           <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Main/Tetris.java">
+    <entry file="file://$PROJECT_DIR$/III.java" />
+    <entry file="jar:///usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar!/java/awt/event/KeyListener.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="361" column="58" lean-forward="true" selection-start-line="361" selection-start-column="58" selection-end-line="361" selection-end-column="58" />
+        <state>
+          <caret lean-forward="true" />
+          <folding>
+            <element signature="e#0#328#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tetris.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="9" lean-forward="true" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TETRIS.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" selection-start-line="10" selection-end-line="10" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/encodings.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="10" lean-forward="true" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5358" />
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar!/java/awt/DefaultKeyboardFocusManager.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4237">
+          <caret line="672" selection-start-line="672" selection-end-line="672" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main/Menu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main/PlayMusic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="722">
+            <caret line="38" column="14" lean-forward="true" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="14" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main/Tetris.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="289" lean-forward="true" selection-start-line="289" selection-end-line="289" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#9673#9674#0" expanded="true" />
+            <element signature="e#9590#9591#0" expanded="true" />
+            <element signature="e#9633#9634#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -347,9 +491,79 @@
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>TETRIS</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="ProjectJDKs.UI">
         <settings>
           <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
           <splitter-proportions>
             <option name="proportions">
               <list>

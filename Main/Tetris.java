@@ -1,6 +1,9 @@
 package Main;
+import javax.print.DocFlavor;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.ArrayList;
@@ -84,10 +87,15 @@ public class Tetris extends JPanel {
 
     private long score;
     private Color[][] well;
+//    private enum STATE{
+//        MENU,
+//        GAME
+//    };
+//    private STATE State = STATE.MENU;
 
     // Creates a border around the well and initializes the dropping piece
     private void init() {
-        well = new Color[12][24];
+        well = new Color[20][24];
         for (int i = 0; i < 12; i++) {
             for (int j = 0; j < 23; j++) {
                 if (i == 0 || i == 11 || j == 22) {
@@ -189,21 +197,26 @@ public class Tetris extends JPanel {
                 deleteRow(j);
                 j += 1;
                 numClears += 1;
+
             }
         }
 
         switch (numClears) {
             case 1:
                 score += 100;
+                PlayMusic.playMusic("/home/aliya/Git/TETRIS/Main/wav/blockClear.wav");
                 break;
             case 2:
                 score += 300;
+                PlayMusic.playMusic("/home/aliya/Git/TETRIS/Main/wav/blockClear.wav");
                 break;
             case 3:
                 score += 500;
+                PlayMusic.playMusic("/home/aliya/Git/TETRIS/Main/wav/blockClear.wav");
                 break;
             case 4:
                 score += 800;
+                PlayMusic.playMusic("/home/aliya/Git/TETRIS/Main/wav/blockClear.wav");
                 break;
         }
     }
@@ -231,143 +244,149 @@ public class Tetris extends JPanel {
         }
 
         // Display the score
-        g.setColor(Color.WHITE);
-        g.drawString("" + score, 19*12, 25);
+        g.setColor(Color.BLACK);
+        g.drawString("SCORE:" + score, 26*17, 25);
 
         // Draw the currently falling piece
         drawPiece(g);
     }
 
+
     public static void main(String[] args) {
-        JFrame f = new JFrame("TETRIS");
-        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        f.setSize(12*26+10, 26*23+25);
-        f.setVisible(true);
+        JFrame m = new JFrame ("TETRIS");
+        m.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        m.setSize(24*26+10, 26*22+25);
+        m.setVisible(true);
+        JPanel p = new JPanel(new GridBagLayout());
+        p.setBackground(Color.BLACK);
+        GridBagConstraints c = new GridBagConstraints();
 
-        final Tetris game = new Tetris();
-        game.init();
-        f.add(game);
 
-        // Keyboard controls
-        f.addKeyListener(new KeyListener() {
-            public void keyTyped(KeyEvent e) {
-            }
-
-            public void keyPressed(KeyEvent e) {
-                switch (e.getKeyCode()) {
-                    case KeyEvent.VK_UP:
-                        playMusic("wav/rotate.wav", false);
-                        game.rotate(-1);
-                        break;
-                    case KeyEvent.VK_DOWN:
-                        playMusic("wav/rotate.wav", false);
-                        game.rotate(+1);
-                        break;
-                    case KeyEvent.VK_LEFT:
-                        playMusic("wav/rotate.wav", false);
-                        game.move(-1);
-                        break;
-                    case KeyEvent.VK_RIGHT:
-                        playMusic("wav/rotate.wav", false);
-                        game.move(+1);
-                        break;
-                    case KeyEvent.VK_SPACE:
-                        playMusic("wav/drop.wav", false);
-                        game.dropDown();
-                        game.score += 1;
-                        break;
-                }
-            }
-
-            public void keyReleased(KeyEvent e) {
+        JButton play=new JButton("PLAY");
+        play.setDefaultCapable(true);
+//        play.setPreferredSize(new Dimension(100,50));
+        play.setBackground(Color.YELLOW);
+        play.setBounds(100, 200, 100, 50);
+        JButton help = new JButton("HELP");
+        help.setBounds(200, 100, 100,50);
+//        help.setPreferredSize(new Dimension(100,50));
+        help.setBackground(Color.RED);
+        p.add(help);
+        p.add(play);
+        m.add(p);
+        help.addActionListener (new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                JFrame t = new JFrame("HELP");
             }
         });
 
-        // Make the falling piece drop every second
-        new Thread() {
+        play.addActionListener(new ActionListener() {
             @Override
-            public void run() {
-                while (true) {
-                    try {
-                        if (game.score >= 0 && game.score <= 500) {
-                            playMusic("wav/holy_alphabet.wav", false);
-                            Thread.sleep(1000);
-                            game.dropDown();
-                            game.playMusicTracker.put(500, true);
+            public void actionPerformed(ActionEvent actionEvent) {
+                startGame();
+            }
+        });
 
-                        } else if (game.score >= 501 && game.score <= 1000) {
-                            playMusic("wav/holy_alphabet.wav", false);
-                            Thread.sleep(900);
-                            game.dropDown();
-                            game.playMusicTracker.put(1000, true);
+    }
 
-                        } else if (game.score >= 1001 && game.score <= 1500) {
-                            playMusic("wav/holy_caffeine.wav", false);
-                            Thread.sleep(800);
-                            game.dropDown();
-                            game.playMusicTracker.put(1500, true);
+    public static void startGame()
+    {
+        JFrame f = new JFrame("TETRIS");
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        f.setSize(24*26+10, 26*22+25);
+        f.setVisible(true);
 
-                        } else if (game.score >= 1501 && game.score <= 2000) {
-                            playMusic("wav/holy_caffeine.wav", false);
-                            Thread.sleep(700);
-                            game.dropDown();
-                            game.playMusicTracker.put(2000, true);
+    final Tetris game = new Tetris();
+        game.init();
+        f.add(game);
 
-                        } else if (game.score >= 2001 && game.score <= 2500) {
-                            playMusic("wav/holy_fruit_salad.wav", false);
-                            Thread.sleep(600);
-                            game.dropDown();
-                            game.playMusicTracker.put(2500, true);
-                        } else if (game.score >= 2501 && game.score <= 3000) {
-                            playMusic("wav/holy_fruit_salad.wav", false);
-                            Thread.sleep(550);
-                            game.dropDown();
-                            game.playMusicTracker.put(3000, true);
-                        } else if (game.score >= 3001 && game.score <= 3500) {
-                            playMusic("wav/holy_heart_failure.wav", false);
-                            Thread.sleep(500);
-                            game.dropDown();
-                            game.playMusicTracker.put(3500, true);
-                        } else if (game.score >= 3501 && game.score <= 4000) {
-                            playMusic("wav/holy_heart_failure.wav", false);
-                            Thread.sleep(400);
-                            game.dropDown();
-                            game.playMusicTracker.put(4000, true);
-                        } else if (game.score >= 4001 && game.score <= 4500) {
-                            playMusic("wav/holy_mashed_potatoes.wav", false);
-                            Thread.sleep(350);
-                            game.dropDown();
-                            game.playMusicTracker.put(4500, true);
-                        } else if (game.score >= 4501 && game.score <= 5000) {
-                            playMusic("wav/holy_mashed_potatoes.wav", false);
-                            Thread.sleep(300);
-                            game.dropDown();
-                            game.playMusicTracker.put(5000, true);
-                        } else if (game.score >= 5001 && game.score <= 5500) {
-                            playMusic("wav/holy_nightmare.wav", false);
-                            Thread.sleep(250);
-                            game.dropDown();
-                            game.playMusicTracker.put(5500, true);
-                        } else if (game.score >= 5501 && game.score <= 6000) {
-                            playMusic("wav/holy_nightmare.wav", false);
-                            Thread.sleep(200);
-                            game.dropDown();
-                            game.playMusicTracker.put(6000, true);
-                        } else if (game.score >= 6001 && game.score <= 6500) {
-                            playMusic("wav/bitchin.wav", false);
-                            Thread.sleep(150);
-                            game.dropDown();
-                            game.playMusicTracker.put(6500, true);
-                        } else {
-                            playMusic("wav/bitchin.wav", false);
-                            Thread.sleep(100);
-                            game.dropDown();
-                            game.playMusicTracker.put(7000, true);
-                        }
-                    } catch (InterruptedException | NullPointerException ignored) {
+    // Keyboard controls
+        f.addKeyListener(new KeyListener() {
+        public void keyTyped(KeyEvent e) {
+        }
+
+        public void keyPressed(KeyEvent e) {
+            switch (e.getKeyCode()) {
+                case KeyEvent.VK_UP:
+                    game.rotate(-1);
+                    break;
+                case KeyEvent.VK_DOWN:
+                    game.rotate(+1);
+                    break;
+                case KeyEvent.VK_LEFT:
+                    game.move(-1);
+                    break;
+                case KeyEvent.VK_RIGHT:
+                    game.move(+1);
+                    break;
+                case KeyEvent.VK_SPACE:
+                    game.dropDown();
+                    game.score += 1;
+                    PlayMusic.playMusic("/home/aliya/Git/TETRIS/Main/wav/drop.wav");
+                    break;
+            }
+        }
+
+        public void keyReleased(KeyEvent e) {
+        }
+    });
+
+    // Make the falling piece drop every second
+        new Thread() {
+        @Override
+        public void run() {
+            PlayMusic.playMusic("/home/aliya/Git/TETRIS/Main/wav/bgMusic.wav");
+            while (true) {
+                try {
+                    if (game.score >= 0 && game.score <= 500) {
+                        Thread.sleep(1000);
+                        game.dropDown();
+                    } else if (game.score >= 501 && game.score <= 1000) {
+                        Thread.sleep(900);
+                        game.dropDown();
+                    } else if (game.score >= 1001 && game.score <= 1500) {
+                        Thread.sleep(800);
+                        game.dropDown();
+                    } else if (game.score >= 1501 && game.score <= 2000) {
+                        Thread.sleep(700);
+                        game.dropDown();
+                    } else if (game.score >= 2001 && game.score <= 2500) {
+                        Thread.sleep(600);
+                        game.dropDown();
+                    } else if (game.score >= 2501 && game.score <= 3000) {
+                        Thread.sleep(550);
+                        game.dropDown();
+                    } else if (game.score >= 3001 && game.score <= 3500) {
+                        Thread.sleep(500);
+                        game.dropDown();
+                    } else if (game.score >= 3501 && game.score <= 4000) {
+                        Thread.sleep(400);
+                        game.dropDown();
+                    } else if (game.score >= 4001 && game.score <= 4500) {
+                        Thread.sleep(350);
+                        game.dropDown();
+                    } else if (game.score >= 4501 && game.score <= 5000) {
+                        Thread.sleep(300);
+                        game.dropDown();
+                    } else if (game.score >= 5001 && game.score <= 5500) {
+                        Thread.sleep(250);
+                        game.dropDown();
+                    } else if (game.score >= 5501 && game.score <= 6000) {
+                        Thread.sleep(200);
+                        game.dropDown();
+                    } else if (game.score >= 6001 && game.score <= 6500) {
+                        Thread.sleep(150);
+                        game.dropDown();
+                    } else {
+                        Thread.sleep(100);
+                        game.dropDown();
                     }
+                } catch (InterruptedException | NullPointerException ignored) {
                 }
             }
-        }.start();
-    }
+        }
+    }.start();
 }
+}
+
