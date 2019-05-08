@@ -1,5 +1,4 @@
 package Main;
-import javax.print.DocFlavor;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -11,7 +10,7 @@ import java.util.Collections;
 import java.util.Map;
 import java.lang.NullPointerException;
 
-import static Main.PlayMusic.playMusic;
+
 
 public class Tetris extends JPanel {
 
@@ -140,6 +139,7 @@ public class Tetris extends JPanel {
             rotation = newRotation;
         }
         repaint();
+
     }
 
     // Move the piece left or right
@@ -177,6 +177,44 @@ public class Tetris extends JPanel {
             }
         }
     }
+    public static void main(String[] args) {
+
+        JFrame gover = new JFrame("GAMEOVER");
+        gover.setSize(600,600);
+        gover.setVisible(true);
+        gover.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        gover.setBackground(Color.CYAN);
+        JPanel p2 = new JPanel(new GridBagLayout());
+        p2.setLayout(null);
+        p2.setBackground(Color.BLACK);
+        GridBagConstraints c = new GridBagConstraints();
+
+        JButton exit = new JButton("EXIT");
+        JButton restart = new JButton("RESTART");
+        exit.setBounds(150,300,100,50);
+        restart.setBounds(350,300,100,50);
+        exit.setBackground(Color.GREEN);
+        restart.setBackground(Color.YELLOW);
+        exit.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                    gover.setVisible(false);
+                    gover.dispose();
+            }
+        });
+        restart.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                gover.setVisible(false);
+                gover.dispose();
+                startGame();
+            }
+        });
+        p2.add(exit);
+        p2.add(restart);
+        gover.add(p2);
+    }
+
 
 
     // Clear completed rows from the field and award score according to
@@ -199,6 +237,7 @@ public class Tetris extends JPanel {
                 numClears += 1;
 
             }
+
         }
 
         switch (numClears) {
@@ -244,32 +283,30 @@ public class Tetris extends JPanel {
         }
 
         // Display the score
-        g.setColor(Color.BLACK);
-        g.drawString("SCORE:" + score, 26*17, 25);
+        g.setColor(Color.RED);
+        g.drawString("" + score, 26*17, 25);
 
         // Draw the currently falling piece
         drawPiece(g);
     }
 
 
-    public static void main(String[] args) {
+    public static void menu() {
         JFrame m = new JFrame ("TETRIS");
         m.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        m.setSize(24*26+10, 26*22+25);
+        m.setSize(600, 600);
         m.setVisible(true);
         JPanel p = new JPanel(new GridBagLayout());
+        p.setLayout(null);
         p.setBackground(Color.BLACK);
         GridBagConstraints c = new GridBagConstraints();
 
 
         JButton play=new JButton("PLAY");
-        play.setDefaultCapable(true);
-//        play.setPreferredSize(new Dimension(100,50));
         play.setBackground(Color.YELLOW);
-        play.setBounds(100, 200, 100, 50);
+        play.setBounds(250, 260, 100, 50);
         JButton help = new JButton("HELP");
-        help.setBounds(200, 100, 100,50);
-//        help.setPreferredSize(new Dimension(100,50));
+        help.setBounds(250, 320, 100,50);
         help.setBackground(Color.RED);
         p.add(help);
         p.add(play);
@@ -277,13 +314,85 @@ public class Tetris extends JPanel {
         help.addActionListener (new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
+
                 JFrame t = new JFrame("HELP");
+                t.setVisible(true);
+                JPanel p3= new JPanel();
+                System.out.println("This project is for course CS102.\n" +
+                        "\n" +
+                        "Author:Aliia Saidillaeva(I take code(only code) from github)\n" +
+                        "\n" +
+                        "Main.Tetris (derived from \"tetramino\" and \"tennis\") - developed by the inventor and \n" +
+                        "developer of the USSR programmer Alexey Pajitnov on June 6, 1984. \n" +
+                        "In this game we use tetramino figures as:\n" +
+                        "\n" +
+                        "Main.Tetris (derived from \"tetramino\" and \"tennis\") - developed by the inventor and developer of the USSR programmer Alexey Pajitnov\n" +
+                        "on June 6, 1984. \n" +
+                        "In this game we use tetramino figures as:\n" +
+                        " \n" +
+                        " I: four blocks in a straight line.\n" +
+                        " \n" +
+                        " O: four blocks in a 2×2 square. \n" +
+                        " \n" +
+                        " T: a row of three blocks with one added below the center.\n" +
+                        " \n" +
+                        " J: a row of three blocks with one added below the right side. \n" +
+                        " \n" +
+                        " L: a row of three blocks with one added below the left side.\n" +
+                        " \n" +
+                        " S: two stacked horizontal dominoes with the top one offset to the right. \n" +
+                        " \n" +
+                        " Z: two stacked horizontal dominoes with the top one offset to the left.\n" +
+                        "\n" +
+                        "The S, Z and J, L figures are reflection of the each other.\n" +
+                        "\n" +
+                        "\n" +
+                        "How to play this game?\n" +
+                        "\n" +
+                        "Button_RIGHT => move right\n" +
+                        "\n" +
+                        "Button_Left => move left\n" +
+                        "\n" +
+                        "Button_Down => move down faster\n" +
+                        "\n" +
+                        "Button_Up => rotate piece\n" +
+                        "\n" +
+                        "After every +500 score the speed increases.\n" +
+                        "\n" +
+                        "move_down_faster => score +1\n" +
+                        "\n" +
+                        "1 filled row => score +100\n" +
+                        "\n" +
+                        "2 filled row => score +300\n" +
+                        "\n" +
+                        "3 filled row => score +500\n" +
+                        "\n" +
+                        "4 filled row => score +800\n" +
+                        "\n" +
+                        "Your goal is to fill a row with blocks of figures using the top buttons and collect the most points.\n" +
+                        "\n" +
+                        "\n" +
+                        "The benefits of playing TETRIS\n" +
+                        "\n" +
+                        "According to the study Mind research network, regular Main.Tetris game allows you to \n" +
+                        "improve your planning skills, develop critical thinking, quick mental response. \n" +
+                        "Moreover, Main.Tetris can increase brain size. \"Main.Tetris\" for the brain is very complicated. \n" +
+                        "A combination of many brain processes is required: attention, visual and motor coordination,\n" +
+                        "memory. All this should work together very quickly. Not surprisingly, Main.Tetris develops \n" +
+                        "several areas of the brain. Besides, every time when it is possible to lower the figure and \n" +
+                        "achieve the disappearance of the level, the person feels satisfied with the solution of the \n" +
+                        "problem. Since the process is cyclical, it is rather difficult to break away from the game. \n" +
+                        "Аs well as playing tetris helps to overcome post-traumatic disorder and stress, as well as \n" +
+                        "cravings for drugs, cigarettes and even food. \n");
+
             }
         });
 
         play.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
+
+                m.setForeground(Color.WHITE);
                 startGame();
             }
         });
@@ -294,7 +403,7 @@ public class Tetris extends JPanel {
     {
         JFrame f = new JFrame("TETRIS");
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        f.setSize(24*26+10, 26*22+25);
+        f.setSize(600, 600);
         f.setVisible(true);
 
     final Tetris game = new Tetris();
