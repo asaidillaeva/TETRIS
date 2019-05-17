@@ -1,6 +1,6 @@
 package Main;
 import javax.swing.*;
-import javax.swing.text.StyledEditorKit;
+
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -14,64 +14,11 @@ import java.lang.NullPointerException;
 public class Tetris extends JPanel {
 
     private static final long serialVersionUID = -8715353373678321308L;
+    private static JFrame f;
+    private static JFrame gover;
+    private static boolean isGameOver;
 
-    private final Point[][][] Tetraminos = {
-            // I-Piece
-            {
-                    { new Point(0, 1), new Point(1, 1), new Point(2, 1), new Point(3, 1) },
-                    { new Point(1, 0), new Point(1, 1), new Point(1, 2), new Point(1, 3) },
-                    { new Point(0, 1), new Point(1, 1), new Point(2, 1), new Point(3, 1) },
-                    { new Point(1, 0), new Point(1, 1), new Point(1, 2), new Point(1, 3) }
-            },
-
-            // J-Piece
-            {
-                    { new Point(0, 1), new Point(1, 1), new Point(2, 1), new Point(2, 0) },
-                    { new Point(1, 0), new Point(1, 1), new Point(1, 2), new Point(2, 2) },
-                    { new Point(0, 1), new Point(1, 1), new Point(2, 1), new Point(0, 2) },
-                    { new Point(1, 0), new Point(1, 1), new Point(1, 2), new Point(0, 0) }
-            },
-
-            // L-Piece
-            {
-                    { new Point(0, 1), new Point(1, 1), new Point(2, 1), new Point(2, 2) },
-                    { new Point(1, 0), new Point(1, 1), new Point(1, 2), new Point(0, 2) },
-                    { new Point(0, 1), new Point(1, 1), new Point(2, 1), new Point(0, 0) },
-                    { new Point(1, 0), new Point(1, 1), new Point(1, 2), new Point(2, 0) }
-            },
-
-            // O-Piece
-            {
-                    { new Point(0, 0), new Point(0, 1), new Point(1, 0), new Point(1, 1) },
-                    { new Point(0, 0), new Point(0, 1), new Point(1, 0), new Point(1, 1) },
-                    { new Point(0, 0), new Point(0, 1), new Point(1, 0), new Point(1, 1) },
-                    { new Point(0, 0), new Point(0, 1), new Point(1, 0), new Point(1, 1) }
-            },
-
-            // S-Piece
-            {
-                    { new Point(1, 0), new Point(2, 0), new Point(0, 1), new Point(1, 1) },
-                    { new Point(0, 0), new Point(0, 1), new Point(1, 1), new Point(1, 2) },
-                    { new Point(1, 0), new Point(2, 0), new Point(0, 1), new Point(1, 1) },
-                    { new Point(0, 0), new Point(0, 1), new Point(1, 1), new Point(1, 2) }
-            },
-
-            // T-Piece
-            {
-                    { new Point(1, 0), new Point(0, 1), new Point(1, 1), new Point(2, 1) },
-                    { new Point(1, 0), new Point(0, 1), new Point(1, 1), new Point(1, 2) },
-                    { new Point(0, 1), new Point(1, 1), new Point(2, 1), new Point(1, 2) },
-                    { new Point(1, 0), new Point(1, 1), new Point(2, 1), new Point(1, 2) }
-            },
-
-            // Z-Piece
-            {
-                    { new Point(0, 0), new Point(1, 0), new Point(1, 1), new Point(2, 1) },
-                    { new Point(1, 0), new Point(0, 1), new Point(1, 1), new Point(0, 2) },
-                    { new Point(0, 0), new Point(1, 0), new Point(1, 1), new Point(2, 1) },
-                    { new Point(1, 0), new Point(0, 1), new Point(1, 1), new Point(0, 2) }
-            }
-    };
+    private final Point[][][] Tetraminos = Peice.Tetraminos;
 
     private final Color[] tetraminoColors = {
             Color.cyan, Color.blue, Color.orange, Color.yellow, Color.green, Color.pink, Color.red
@@ -95,6 +42,7 @@ public class Tetris extends JPanel {
 
     // Creates a border around the well and initializes the dropping piece
     private void init() {
+        isGameOver = false;
         well = new Color[20][24];
         for (int i = 0; i < 12; i++) {
             for (int j = 0; j < 23; j++) {
@@ -110,14 +58,28 @@ public class Tetris extends JPanel {
 
     // Put a new, random piece into the dropping position
     private void newPiece() {
-        pieceOrigin = new Point(5, 2);
-        rotation = 0;
-        if (nextPieces.isEmpty()) {
-            Collections.addAll(nextPieces, 0, 1, 2, 3, 4, 5, 6);
-            Collections.shuffle(nextPieces);
+        if (!gameOver()) {
+            pieceOrigin = new Point(5, 1);
+            rotation = 0;
+            if (nextPieces.isEmpty()) {
+                Collections.addAll(nextPieces, 0, 1, 2, 3, 4, 5, 6);
+                Collections.shuffle(nextPieces);
+            }
+            currentPiece = nextPieces.get(0);
+            nextPieces.remove(0);
+        } else {
+            gameover();
+
         }
-        currentPiece = nextPieces.get(0);
-        nextPieces.remove(0);
+    }
+
+    private boolean gameOver() {
+        for (int i = 1; i < 11; i++) {
+            if (well[i][2] != Color.BLACK) {
+                return true;
+            }
+        }
+        return false;
     }
 
     // Collision test for the dropping piece
@@ -157,7 +119,9 @@ public class Tetris extends JPanel {
             pieceOrigin.y += 1;
         }
         else {
-            fixToWell();
+            if (!isGameOver) {
+                fixToWell();
+            }
         }
         repaint();
 
@@ -171,7 +135,6 @@ public class Tetris extends JPanel {
         }
         clearRows();
         newPiece();
-
     }
 
     private void deleteRow(int row) {
@@ -182,8 +145,10 @@ public class Tetris extends JPanel {
         }
     }
     private static void gameover() {
+        isGameOver = true;
+        f.dispose();
 
-        JFrame gover = new JFrame("GAMEOVER");
+        gover = new JFrame("GAMEOVER");
         gover.setSize(600,600);
         gover.setVisible(true);
         gover.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -191,7 +156,6 @@ public class Tetris extends JPanel {
         JPanel p2 = new JPanel(new GridBagLayout());
         p2.setLayout(null);
         p2.setBackground(Color.BLACK);
-        GridBagConstraints c = new GridBagConstraints();
 
         JButton exit = new JButton("EXIT");
         JButton restart = new JButton("RESTART");
@@ -200,12 +164,12 @@ public class Tetris extends JPanel {
         exit.setBackground(Color.GREEN);
         restart.setBackground(Color.YELLOW);
         exit.addActionListener(actionEvent -> {
-                gover.setVisible(false);
-                gover.dispose();
+                System.exit(1);
         });
         restart.addActionListener(actionEvent -> {
             gover.setVisible(false);
             gover.dispose();
+            f.dispose();
             startGame();
         });
         p2.add(exit);
@@ -241,19 +205,19 @@ public class Tetris extends JPanel {
         switch (numClears) {
             case 1:
                 score += 100;
-                PlayMusic.playMusic("/home/aliya/Git/TETRIS/Main/wav/blockClear.wav");
+               // PlayMusic.playMusic("/home/aliya/Git/TETRIS/Main/wav/blockClear.wav");
                 break;
             case 2:
                 score += 300;
-                PlayMusic.playMusic("/home/aliya/Git/TETRIS/Main/wav/blockClear.wav");
+               // PlayMusic.playMusic("/home/aliya/Git/TETRIS/Main/wav/blockClear.wav");
                 break;
             case 3:
                 score += 500;
-                PlayMusic.playMusic("/home/aliya/Git/TETRIS/Main/wav/blockClear.wav");
+               // PlayMusic.playMusic("/home/aliya/Git/TETRIS/Main/wav/blockClear.wav");
                 break;
             case 4:
                 score += 800;
-                PlayMusic.playMusic("/home/aliya/Git/TETRIS/Main/wav/blockClear.wav");
+              //  PlayMusic.playMusic("/home/aliya/Git/TETRIS/Main/wav/blockClear.wav");
                 break;
         }
     }
@@ -335,6 +299,7 @@ public class Tetris extends JPanel {
         play.addActionListener(actionEvent -> {
 
             m.setForeground(Color.WHITE);
+            m.dispose();
             startGame();
         });
 
@@ -342,7 +307,7 @@ public class Tetris extends JPanel {
 
     private static void startGame()
     {
-        JFrame f = new JFrame("TETRIS");
+        f = new JFrame("TETRIS");
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.setSize(600, 600);
         f.setVisible(true);
@@ -373,7 +338,7 @@ public class Tetris extends JPanel {
                 case KeyEvent.VK_SPACE:
                     game.dropDown();
                     game.score += 1;
-                    PlayMusic.playMusic("/home/aliya/Git/TETRIS/Main/wav/drop.wav");
+                     //PlayMusic.playMusic("/home/aliya/Git/TETRIS/Main/wav/drop.wav");
                     break;
             }
         }
@@ -384,9 +349,8 @@ public class Tetris extends JPanel {
 
     // Make the falling piece drop every second
         new Thread(() -> {
-            PlayMusic.playMusic("/home/aliya/Git/TETRIS/Main/wav/bgMusic.wav");
-            while (true) try {
-                for (int r = 0; r < 22; r++) {
+            //PlayMusic.playMusic("/home/aliya/Git/TETRIS/Main/wav/bgMusic.wav");
+            while (true) try { {
 
                     if (game.score >= 0 && game.score <= 500) {
                         Thread.sleep(1000);
@@ -432,9 +396,7 @@ public class Tetris extends JPanel {
                         game.dropDown();
                     }
                 }
-                for (int i = 1; i<=11; i++){
-                    if(well[i][21]!=Color.BLACK){gameover();}
-                }
+
             }catch (InterruptedException | NullPointerException ignored) {
             }
         }).start();
