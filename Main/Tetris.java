@@ -9,36 +9,31 @@ import java.util.Collections;
 import java.util.Map;
 import java.lang.NullPointerException;
 
+import static Main.PlayMusic.playMusic;
+import static java.lang.Integer.valueOf;
 
 
 public class Tetris extends JPanel {
 
     private static final long serialVersionUID = -8715353373678321308L;
-    private static JFrame f;
-    private static JFrame gover;
-    private static boolean isGameOver;
-
-    private final Point[][][] Tetraminos = Peice.Tetraminos;
-
+    static JFrame f;
+    static JFrame gover;
+    static boolean isGameOver;
+    private final Point[][][] Tetraminos = Piece.Tetraminos;
+    static long score;
+        private static Color[][] well;
     private final Color[] tetraminoColors = {
             Color.cyan, Color.blue, Color.orange, Color.yellow, Color.green, Color.pink, Color.red
     };
-
     private Point pieceOrigin;
     private int currentPiece;
     private int rotation;
-    private ArrayList<Integer> nextPieces;
+    static ArrayList<Integer> nextPieces;
 
-    {
+    static {
         nextPieces = new ArrayList<>();
     }
 
-    private Map<Integer, Boolean> playMusicTracker;
-
-    private long score;
-    private static Color[][] well;
-    private int x;
-    private int y;
 
     // Creates a border around the well and initializes the dropping piece
     private void init() {
@@ -68,7 +63,7 @@ public class Tetris extends JPanel {
             currentPiece = nextPieces.get(0);
             nextPieces.remove(0);
         } else {
-            gameover();
+            Gameover.gameover();
 
         }
     }
@@ -86,10 +81,10 @@ public class Tetris extends JPanel {
     private boolean collidesAt(int x, int y, int rotation) {
         for (Point p : Tetraminos[currentPiece][rotation]) {
             if (well[p.x + x][p.y + y] != Color.BLACK) {
-                return true;
+                return false;
             }
         }
-        return false;
+        return true;
     }
 
     // Rotate the piece clockwise or counterclockwise
@@ -98,7 +93,7 @@ public class Tetris extends JPanel {
         if (newRotation < 0) {
             newRotation = 3;
         }
-        if (!collidesAt(pieceOrigin.x, pieceOrigin.y, newRotation)) {
+        if (collidesAt(pieceOrigin.x, pieceOrigin.y, newRotation)) {
             rotation = newRotation;
         }
         repaint();
@@ -107,7 +102,7 @@ public class Tetris extends JPanel {
 
     // Move the piece left or right
     private void move(int i) {
-        if (!collidesAt(pieceOrigin.x + i, pieceOrigin.y, rotation)) {
+        if (collidesAt(pieceOrigin.x + i, pieceOrigin.y, rotation)) {
             pieceOrigin.x += i;
         }
         repaint();
@@ -115,7 +110,7 @@ public class Tetris extends JPanel {
 
     // Drops the piece one line or fixes it to the well if it can't drop
     private void dropDown() {
-        if (!collidesAt(pieceOrigin.x, pieceOrigin.y + 1, rotation)) {
+        if (collidesAt(pieceOrigin.x, pieceOrigin.y + 1, rotation)) {
             pieceOrigin.y += 1;
         }
         else {
@@ -144,39 +139,6 @@ public class Tetris extends JPanel {
             }
         }
     }
-    private static void gameover() {
-        isGameOver = true;
-        f.dispose();
-
-        gover = new JFrame("GAMEOVER");
-        gover.setSize(600,600);
-        gover.setVisible(true);
-        gover.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        gover.setBackground(Color.CYAN);
-        JPanel p2 = new JPanel(new GridBagLayout());
-        p2.setLayout(null);
-        p2.setBackground(Color.BLACK);
-
-        JButton exit = new JButton("EXIT");
-        JButton restart = new JButton("RESTART");
-        exit.setBounds(150,300,100,50);
-        restart.setBounds(350,300,100,50);
-        exit.setBackground(Color.GREEN);
-        restart.setBackground(Color.YELLOW);
-        exit.addActionListener(actionEvent -> {
-                System.exit(1);
-        });
-        restart.addActionListener(actionEvent -> {
-            gover.setVisible(false);
-            gover.dispose();
-            f.dispose();
-            startGame();
-        });
-        p2.add(exit);
-        p2.add(restart);
-        gover.add(p2);
-    }
-
 
 
     // Clear completed rows from the field and award score according to
@@ -205,19 +167,19 @@ public class Tetris extends JPanel {
         switch (numClears) {
             case 1:
                 score += 100;
-               // PlayMusic.playMusic("/home/aliya/Git/TETRIS/Main/wav/blockClear.wav");
+                playMusic("/home/aliya/Git/TETRIS/Main/wav/blockClear.wav");// простите знаний не хватило сделать по другому :)
                 break;
             case 2:
                 score += 300;
-               // PlayMusic.playMusic("/home/aliya/Git/TETRIS/Main/wav/blockClear.wav");
+                playMusic("/home/aliya/Git/TETRIS/Main/wav/blockClear.wav");
                 break;
             case 3:
                 score += 500;
-               // PlayMusic.playMusic("/home/aliya/Git/TETRIS/Main/wav/blockClear.wav");
+                playMusic("/home/aliya/Git/TETRIS/Main/wav/blockClear.wav");
                 break;
             case 4:
                 score += 800;
-              //  PlayMusic.playMusic("/home/aliya/Git/TETRIS/Main/wav/blockClear.wav");
+                playMusic("/home/aliya/Git/TETRIS/Main/wav/blockClear.wav");
                 break;
         }
     }
@@ -247,18 +209,21 @@ public class Tetris extends JPanel {
         // Display the score
         g.setColor(Color.RED);
         g.clearRect(0,0,26*17, 25);
-        g.drawString("SCORE:" + score, 26*17, 25);
+        g.drawString("SCORE:" + score, 25 , 23);
+        g.drawString("Highest " + Highest.getHighest(),170,23);
 
         // Draw the currently falling piece
         drawPiece(g);
     }
 
 
+
     public static void main(String[] args) {
         JFrame m = new JFrame ("TETRIS");
         m.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        m.setSize(600, 600);
+        m.setSize(310, 600);
         m.setVisible(true);
+        m.setResizable(false);
         JPanel p = new JPanel(new GridBagLayout());
         p.setLayout(null);
         p.setBackground(Color.BLACK);
@@ -267,139 +232,150 @@ public class Tetris extends JPanel {
 
         JButton play=new JButton("PLAY");
         play.setBackground(Color.YELLOW);
-        play.setBounds(250, 260, 100, 50);
+        play.setBounds(100, 200, 100, 50);
         JButton help = new JButton("HELP");
-        help.setBounds(250, 320, 100,50);
+        help.setBounds(100, 260, 100,50);
         help.setBackground(Color.RED);
+        JButton exit = new JButton("EXIT");
+        exit.setBounds(100, 320, 100, 50);
+        exit.setBackground(Color.GREEN);
+        exit.addActionListener(actionEvent -> {
+            System.exit(1);
+        });
         p.add(help);
         p.add(play);
+        p.add(exit);
         m.add(p);
+        play.addActionListener(actionEvent -> {
+            m.dispose();
+            startGame();
+        });
         help.addActionListener (actionEvent -> {
 
 
             JFrame t = new JFrame("HELP");
             t.setVisible(true);
             t.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-            t.setSize(600,600);
-            t.setBackground(Color.BLACK);
+            t.setSize(900,900);
+            t.setBackground(Color.WHITE);
             JPanel p3 = new JPanel();
             p3.setBackground(Color.WHITE);
-            p3.setSize(600,600);
+            p3.setSize(900,900);
             JTextArea jt = new JTextArea();
-            jt.setText("Tetris (derived from \"tetramino\" and \"tennis\") - developed by the inventor and developer of the USSR programmer Alexey Pajitnov\non June 6, 1984. \nIn this game we use tetramino figures as:\n \n I: four blocks in a straight line.\n \n O: four blocks in a 2×2 square. \n \n T: a row of three blocks with one added below the center.\n \n J: a row of three blocks with one added below the right side. \n \n L: a row of three blocks with one added below the left side.\n \n S: two stacked horizontal dominoes with the top one offset to the right. \n \n Z: two stacked horizontal dominoes with the top one offset to the left.\n\nThe S, Z and J, L figures are reflection of the each other.\n\n\nHow to play this game?\n\nButton_RIGHT => move right\n\nButton_Left => move left\n\nButton_Down => move down faster\n\nButton_Up => rotate piece\n\nAfter every +500 score the speed increases.\n\nmove_down_faster => score +1\n\n1 filled row => score +100\n\n2 filled row => score +300\n\n3 filled row => score +500\n\n4 filled row => score +800\n\nYour goal is to fill a row with blocks of figures using the top buttons and collect the most points.\n\n\nThe benefits of playing TETRIS\n\nAccording to the study Mind research network, regular Main.Tetris game allows you to \nimprove your planning skills, develop critical thinking, quick mental response. \nMoreover, Main.Tetris can increase brain size. \"Main.Tetris\" for the brain is very complicated. \nA combination of many brain processes is required: attention, visual and motor coordination,\nmemory. All this should work together very quickly. Not surprisingly, Main.Tetris develops \nseveral areas of the brain. Besides, every time when it is possible to lower the figure and \nachieve the disappearance of the level, the person feels satisfied with the solution of the \nproblem. Since the process is cyclical, it is rather difficult to break away from the game. \nАs well as playing tetris helps to overcome post-traumatic disorder and stress, as well as \ncravings for drugs, cigarettes and even food. \n");
             jt.setBackground(Color.WHITE);
+            jt.setText("Tetris (derived from \"tetramino\" and \"tennis\") - developed by the inventor and developer of the USSR programmer Alexey Pajitnov\non June 6, 1984. \nIn this game we use tetramino figures as:\n \n I: four blocks in a straight line.\n \n O: four blocks in a 2×2 square. \n \n T: a row of three blocks with one added below the center.\n \n J: a row of three blocks with one added below the right side. \n \n L: a row of three blocks with one added below the left side.\n \n S: two stacked horizontal dominoes with the top one offset to the right. \n \n Z: two stacked horizontal dominoes with the top one offset to the left.\n\nThe S, Z and J, L figures are reflection of the each other.\n\n\nHow to play this game?\n\nButton_RIGHT => move right\n\nButton_Left => move left\n\nButton_Down => move down faster\n\nButton_Up => rotate piece\n\nAfter every +500 score the speed increases.\n\nmove_down_faster => score +1\n\n1 filled row => score +100\n\n2 filled row => score +300\n\n3 filled row => score +500\n\n4 filled row => score +800\n\nYour goal is to fill a row with blocks of figures using the top buttons and collect the most points.\n\n\nThe benefits of playing TETRIS\n\nAccording to the study Mind research network, regular Main.Tetris game allows you to \nimprove your planning skills, develop critical thinking, quick mental response. \nMoreover, Main.Tetris can increase brain size. \"Main.Tetris\" for the brain is very complicated. \nA combination of many brain processes is required: attention, visual and motor coordination,\nmemory. All this should work together very quickly. Not surprisingly, Main.Tetris develops \nseveral areas of the brain. Besides, every time when it is possible to lower the figure and \nachieve the disappearance of the level, the person feels satisfied with the solution of the \nproblem. Since the process is cyclical, it is rather difficult to break away from the game. \nАs well as playing tetris helps to overcome post-traumatic disorder and stress, as well as \ncravings for drugs, cigarettes and even food. \n");
             jt.setColumns(20);
             jt.setRows(100);
-            JScrollPane js = new JScrollPane();
-            js.setViewportView(jt);
+            JButton back = new JButton("BACK");
+            back.setBackground(Color.BLACK);
+            back.setBounds(850,800,100,50);
+            back.addActionListener(actionEvent1 -> {
+                t.setVisible(false);
+            });
             p3.add(jt);
+            p3.add(back);
             t.add(p3);
-        });
-
-        play.addActionListener(actionEvent -> {
-
-            m.setForeground(Color.WHITE);
-            m.dispose();
-            startGame();
         });
 
     }
 
-    private static void startGame()
+    public static void startGame()
     {
         f = new JFrame("TETRIS");
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        f.setSize(600, 600);
+        f.setSize(310, 600);
         f.setVisible(true);
+        f.setResizable(false);
 
-    final Tetris game = new Tetris();
+        final Tetris game = new Tetris();
         game.init();
         f.add(game);
 
-    // Keyboard controls
+        // Keyboard controls
         f.addKeyListener(new KeyListener() {
-        public void keyTyped(KeyEvent e) {
-        }
-
-        public void keyPressed(KeyEvent e) {
-            switch (e.getKeyCode()) {
-                case KeyEvent.VK_UP:
-                    game.rotate(-1);
-                    break;
-                case KeyEvent.VK_DOWN:
-                    game.rotate(+1);
-                    break;
-                case KeyEvent.VK_LEFT:
-                    game.move(-1);
-                    break;
-                case KeyEvent.VK_RIGHT:
-                    game.move(+1);
-                    break;
-                case KeyEvent.VK_SPACE:
-                    game.dropDown();
-                    game.score += 1;
-                     //PlayMusic.playMusic("/home/aliya/Git/TETRIS/Main/wav/drop.wav");
-                    break;
+            public void keyTyped(KeyEvent e) {
             }
-        }
 
-        public void keyReleased(KeyEvent e) {
-        }
-    });
+            public void keyPressed(KeyEvent e) {
+                switch (e.getKeyCode()) {
+                    case KeyEvent.VK_UP:
+                        game.rotate(-1);
+                        break;
+                    case KeyEvent.VK_DOWN:
+                        game.rotate(+1);
+                        break;
+                    case KeyEvent.VK_LEFT:
+                        game.move(-1);
+                        break;
+                    case KeyEvent.VK_RIGHT:
+                        game.move(+1);
+                        break;
+                    case KeyEvent.VK_SPACE:
+                        game.dropDown();
+                        score += 1;
+                        playMusic("/home/aliya/Git/TETRIS/Main/wav/drop.wav");
+                        break;
+                }
+            }
 
-    // Make the falling piece drop every second
+            public void keyReleased(KeyEvent e) {
+            }
+        });
+
+        // Make the falling piece drop every second
         new Thread(() -> {
-            //PlayMusic.playMusic("/home/aliya/Git/TETRIS/Main/wav/bgMusic.wav");
+
+            playMusic("/home/aliya/Git/TETRIS/Main/wav/bgMusic.wav");
             while (true) try { {
 
-                    if (game.score >= 0 && game.score <= 500) {
-                        Thread.sleep(1000);
-                        game.dropDown();
-                    } else if (game.score >= 501 && game.score <= 1000) {
-                        Thread.sleep(900);
-                        game.dropDown();
-                    } else if (game.score >= 1001 && game.score <= 1500) {
-                        Thread.sleep(800);
-                        game.dropDown();
-                    } else if (game.score >= 1501 && game.score <= 2000) {
-                        Thread.sleep(700);
-                        game.dropDown();
-                    } else if (game.score >= 2001 && game.score <= 2500) {
-                        Thread.sleep(600);
-                        game.dropDown();
-                    } else if (game.score >= 2501 && game.score <= 3000) {
-                        Thread.sleep(550);
-                        game.dropDown();
-                    } else if (game.score >= 3001 && game.score <= 3500) {
-                        Thread.sleep(500);
-                        game.dropDown();
-                    } else if (game.score >= 3501 && game.score <= 4000) {
-                        Thread.sleep(400);
-                        game.dropDown();
-                    } else if (game.score >= 4001 && game.score <= 4500) {
-                        Thread.sleep(350);
-                        game.dropDown();
-                    } else if (game.score >= 4501 && game.score <= 5000) {
-                        Thread.sleep(300);
-                        game.dropDown();
-                    } else if (game.score >= 5001 && game.score <= 5500) {
-                        Thread.sleep(250);
-                        game.dropDown();
-                    } else if (game.score >= 5501 && game.score <= 6000) {
-                        Thread.sleep(200);
-                        game.dropDown();
-                    } else if (game.score >= 6001 && game.score <= 6500) {
-                        Thread.sleep(150);
-                        game.dropDown();
-                    } else {
-                        Thread.sleep(100);
-                        game.dropDown();
-                    }
+                if (score >= 0 && score <= 500) {
+                    Thread.sleep(1000);
+                    game.dropDown();
+                } else if (score >= 501 && score <= 1000) {
+                    Thread.sleep(900);
+                    game.dropDown();
+                } else if (score >= 1001 && score <= 1500) {
+                    Thread.sleep(800);
+                    game.dropDown();
+                } else if (score >= 1501 && score <= 2000) {
+                    Thread.sleep(700);
+                    game.dropDown();
+                } else if (score >= 2001 && score <= 2500) {
+                    Thread.sleep(600);
+                    game.dropDown();
+                } else if (score >= 2501 && score <= 3000) {
+                    Thread.sleep(550);
+                    game.dropDown();
+                } else if (score >= 3001 && score <= 3500) {
+                    Thread.sleep(500);
+                    game.dropDown();
+                } else if (score >= 3501 && score <= 4000) {
+                    Thread.sleep(400);
+                    game.dropDown();
+                } else if (score >= 4001 && score <= 4500) {
+                    Thread.sleep(350);
+                    game.dropDown();
+                } else if (score >= 4501 && score <= 5000) {
+                    Thread.sleep(300);
+                    game.dropDown();
+                } else if (score >= 5001 && score <= 5500) {
+                    Thread.sleep(250);
+                    game.dropDown();
+                } else if (score >= 5501 && score <= 6000) {
+                    Thread.sleep(200);
+                    game.dropDown();
+                } else if (score >= 6001 && score <= 6500) {
+                    Thread.sleep(150);
+                    game.dropDown();
+                } else {
+                    Thread.sleep(100);
+                    game.dropDown();
                 }
+            }
 
             }catch (InterruptedException | NullPointerException ignored) {
             }
         }).start();
-}
+    }
 }
 

@@ -2,7 +2,7 @@ package Main;
 
 import java.awt.*;
 
-public class Peice extends Tetris{
+public class Piece extends Tetris{
     static final Point[][][] Tetraminos = {
             // I-Piece
             {
