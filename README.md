@@ -11,7 +11,7 @@
 
 Bishkek 2019
 
-Title of the Project | Colour Game
+Title of the Project | TETRIS Game
 -- | --
 Topic addressed by the project | Attention improvement
 Background | The history of the project, last days my little brother started to play this game. It was the idea to create tetris game.
