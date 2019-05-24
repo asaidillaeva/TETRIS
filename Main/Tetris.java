@@ -64,6 +64,11 @@ public class Tetris extends JPanel {
             nextPieces.remove(0);
         } else {
             Gameover.gameover();
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
 
         }
     }
@@ -167,19 +172,20 @@ public class Tetris extends JPanel {
         switch (numClears) {
             case 1:
                 score += 100;
-                playMusic("/home/aliya/Git/TETRIS/Main/wav/blockClear.wav");// простите знаний не хватило сделать по другому :)
+                //WRITE ABSOLUTE PATH TO THE MUSIC FILE
+                playMusic("/home/lab/TETRIS/Main/wav/blockClear.wav");// знаний не хватило сделать по другому :)
                 break;
             case 2:
                 score += 300;
-                playMusic("/home/aliya/Git/TETRIS/Main/wav/blockClear.wav");
+                playMusic("/home/lab/TETRIS/Main/wav/blockClear.wav");
                 break;
             case 3:
                 score += 500;
-                playMusic("/home/aliya/Git/TETRIS/Main/wav/blockClear.wav");
+                playMusic("/home/lab/TETRIS/Main/wav/blockClear.wav");
                 break;
             case 4:
                 score += 800;
-                playMusic("/home/aliya/Git/TETRIS/Main/wav/blockClear.wav");
+                playMusic("/home/lab/TETRIS/Main/wav/blockClear.wav");
                 break;
         }
     }
@@ -210,7 +216,16 @@ public class Tetris extends JPanel {
         g.setColor(Color.RED);
         g.clearRect(0,0,26*17, 25);
         g.drawString("SCORE:" + score, 25 , 23);
-        g.drawString("Highest " + Highest.getHighest(),170,23);
+        if(Highest.getHighest()!=null) {
+            if (score > valueOf(Highest.getHighest())) {
+                Highest.setHighest(String.valueOf(score));
+                g.drawString("Highest " + Highest.getHighest(),170,23);
+            }
+        }else{
+            Highest.setHighest(String.valueOf(0));
+            g.drawString("Highest  4120" ,170,23);
+        }
+
 
         // Draw the currently falling piece
         drawPiece(g);
@@ -313,7 +328,7 @@ public class Tetris extends JPanel {
                     case KeyEvent.VK_SPACE:
                         game.dropDown();
                         score += 1;
-                        playMusic("/home/aliya/Git/TETRIS/Main/wav/drop.wav");
+                        playMusic("/home/lab/TETRIS/Main/wav/drop.wav");
                         break;
                 }
             }
@@ -325,7 +340,7 @@ public class Tetris extends JPanel {
         // Make the falling piece drop every second
         new Thread(() -> {
 
-            playMusic("/home/aliya/Git/TETRIS/Main/wav/bgMusic.wav");
+            playMusic("/home/lab/TETRIS/Main/wav/bgMusic.wav");
             while (true) try { {
 
                 if (score >= 0 && score <= 500) {
@@ -349,7 +364,7 @@ public class Tetris extends JPanel {
                 } else if (score >= 3001 && score <= 3500) {
                     Thread.sleep(500);
                     game.dropDown();
-                } else if (score >= 3501 && score <= 4000) {
+                } else if (score >= 3501 && score  <= 4000) {
                     Thread.sleep(400);
                     game.dropDown();
                 } else if (score >= 4001 && score <= 4500) {

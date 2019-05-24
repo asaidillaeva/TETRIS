@@ -7,6 +7,7 @@ import static java.lang.Integer.valueOf;
 
 public class Gameover extends Tetris {
     protected static void gameover() {
+        score = 0;
         isGameOver = true;
         f.dispose();
 
@@ -40,8 +41,6 @@ public class Gameover extends Tetris {
             if (score > valueOf(Highest.getHighest())) {
                 Highest.setHighest(String.valueOf(score));
             }
-        }else{
-            Highest.setHighest(String.valueOf(0));
         }
     }
 }
