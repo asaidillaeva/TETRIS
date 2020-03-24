@@ -22,7 +22,7 @@ Proposed activities | Power Point Presentation
 Estimative budget | 0 $
 Proposed partners | None
 Git repository link |  https://github.com/asaidillaeva/TETRIS
-Contact person | Name: Aliia,  Surname : Saidillaeva  email: aliia.saidillaeva@iaau.edu.kg,  mobile: +996708771864 
+Contact person | email: aliia.saidillaeva@iaau.edu.kg,  mobile: +996XXXXXXXXX
                               
 
 Software Features List  :
